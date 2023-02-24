@@ -1,9 +1,8 @@
+#ifndef DATE_H
+#define DATE_H
 //
 // Created by xuxu on 2023/2/23.
 //
-
-#pragma once
-
 #include <iostream>
 #include <string>
 
@@ -23,9 +22,9 @@ public:
     string FormatDate() const;
 
 protected:
-    virtual bool isLeapYear();
+    bool isLeapYear();
 
-    virtual bool isLegalDate();
+    bool isLegalDate();
 
 protected:
     int m_year;
@@ -33,14 +32,20 @@ protected:
     int m_day;
 };
 
-class PreviousDate:public Date
+class PreviousDate : public Date
 {
 public:
-    virtual string getPreviousDate();
+    //PreviousDate(){};
+    PreviousDate(int year, int month, int day):m_year(year),m_month(month),m_day(day);
+    string getPreviousDate();
 };
 
-class NextDate:public Date
+class NextDate : public Date
 {
 public:
-    virtual string getNextDate() ;
+    //using Date::Date();
+    NextDate(int year, int month, int day) : m_year(year), m_month(month), m_day(day);
+    string getNextDate();
+    
 };
+#endif
