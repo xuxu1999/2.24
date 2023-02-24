@@ -18,6 +18,9 @@ using namespace std;
 int main()
 {
     
-    //d.Calculate()
+    
+    PreviousDay d(2023, 2, 23);
+    
+    cout<< d.GetResult();
     return 0;
 }
